@@ -1,7 +1,15 @@
 <?php get_header(); ?>
 <div class="bg-gray-100 py-12">
     <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold"><?php the_archive_title(); ?></h1>
+        <h1 class="text-4xl font-bold">
+            <?php
+            if (is_home() && !is_front_page()) {
+                single_post_title();
+            } else {
+                echo 'Blog';
+            }
+            ?>
+        </h1>
     </div>
 </div>
 <main class="container mx-auto px-4 py-12">
@@ -10,6 +18,7 @@
             while (have_posts()):
                 the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="block group">
+                    <p>dasdjgv</p>
                     <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition h-full">
                         <?php if (has_post_thumbnail()):
                             the_post_thumbnail('medium_large', ['class' => 'w-full h-56 object-cover']);
