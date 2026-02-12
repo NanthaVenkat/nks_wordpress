@@ -6,7 +6,7 @@ function NKs_theme_setup()
     add_theme_support('post-thumbnail');
 
     // Logo
-    add_theme_support('cudtom-logo', [
+    add_theme_support('custom-logo', [
         'height' => 80,
         'weight' => 240,
         'flex-width' => true,
