@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<?php get_header(); ?>
 
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
+<main class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold underline mb-4">
+        Wordpress Dashboard
     </h1>
-    <?php wp_footer(); ?>
-</body>
 
-</html>
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            the_content();
+        endwhile;
+    else :
+        _e('Sorry, no posts matched your criteria.', 'textdomain');
+    endif;
+    ?>
+</main>
+
+<?php get_footer(); ?>
