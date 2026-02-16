@@ -12,6 +12,7 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
             <div class="site-logo max-w-[200px]">
                 <?php if (has_custom_logo()) {
                     the_custom_logo();
@@ -22,6 +23,7 @@
                 <?php } ?>
             </div>
 
+            <!-- Menu -->
             <nav class="hidden md:block">
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
@@ -30,6 +32,7 @@
                 ]); ?>
             </nav>
 
+            <!-- Mobile menu button -->
             <button id="menu-toggle" class="md:hidden p-2 text-gray-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M4 6h16M4 12h16m-7 6h7"></path>
