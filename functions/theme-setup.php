@@ -12,7 +12,6 @@ function NKs_theme_setup()
         'flex-width' => true,
         'flex-height' => true
     ]);
-    ]
 
     // fav icon
     add_theme_support('site-icon');
